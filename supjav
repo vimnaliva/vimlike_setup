@@ -1,0 +1,34 @@
+settings.map('v', function(vimlike) {
+    vimlike.click('//a[text()=">"]');
+});
+
+settings.map('b', function(vimlike) {
+    vimlike.click('//a[text()="<"]');
+});
+
+settings.map('2', function(vimlike) {
+    vimlike.click('//a[text()="有修正"]');
+});
+
+settings.map('3', function(vimlike) {
+    vimlike.click('//a[text()="無修正"]');
+});
+
+settings.map('4', function(vimlike) {
+    vimlike.click('//a[text()="モザイク破壊"]');
+});
+
+settings.map('g e', function(vimlike) {
+    var query = prompt("search supjav:");
+    if (query) {
+        window.open("https://supjav.com/ja/?s=" + encodeURIComponent(query), "_blank");
+    }
+});
+
+settings.map('g d', function(vimlike) {
+    var query = prompt("search dmm:");
+    if (query) {
+        window.open("https://www.dmm.co.jp/search/=/searchstr=" + encodeURIComponent(query) + "/limit=30/sort=date/", "_blank");
+    }
+});
+
