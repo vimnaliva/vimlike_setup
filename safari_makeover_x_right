@@ -1,0 +1,20 @@
+/* ③ 右侧趋势栏/推荐栏的一些常见挂载点 */
+[data-testid="sidebarColumn"],
+aside[role="complementary"] {
+  display: none !important;
+}
+
+
+/* ④ 让中栏真正变宽并居中 */
+main[role="main"] {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+[data-testid="primaryColumn"] {
+  max-width: 100% !important;
+  width: min(1200px, 90vw) !important;  /* 想更宽可把 1200/90vw 再加大 */
+  margin: 0 auto !important;
+}
+
