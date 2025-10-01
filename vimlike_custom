@@ -1,0 +1,87 @@
+// Scroll
+settings.map('j', VLCommand.SCROLL_DOWN, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('k', VLCommand.SCROLL_UP, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('h', VLCommand.SCROLL_LEFT, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('l', VLCommand.SCROLL_RIGHT, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+// settings.map('d', VLCommand.HALF_PAGE_DOWN);
+// settings.map('e', VLCommand.HALF_PAGE_UP);
+settings.map('space', VLCommand.HALF_PAGE_DOWN, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('shift+space', VLCommand.HALF_PAGE_UP);
+settings.map('shift+d', VLCommand.PAGE_DOWN);
+settings.map('shift+e', VLCommand.PAGE_UP);
+settings.map('g g', VLCommand.SCROLL_TO_TOP);
+settings.map('shift+g', VLCommand.SCROLL_TO_BOTTOM);
+settings.map('e', VLCommand.SCROLL_TO_BOTTOM);
+
+// Normal mode
+settings.map('f', VLCommand.ACTIVATE_LINK, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('shift+f', VLCommand.ACTIVATE_LINK);
+settings.map('d', VLCommand.ACTIVATE_LINK_WITH_NEW_TAB);
+settings.map('n', VLCommand.NEXT_LINK, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('shift+n', VLCommand.PREV_LINK, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('tab', VLCommand.NEXT_LINK);
+settings.map('shift+tab', VLCommand.PREV_LINK);
+settings.map('a', VLCommand.GO_BACK);
+settings.map('s', VLCommand.GO_FORWARD);
+settings.map('q', VLCommand.PREV_TAB);
+settings.map('w', VLCommand.NEXT_TAB);
+settings.map('v t', VLCommand.NEW_TAB);
+settings.map('t', VLCommand.NEW_TAB, {excludes: ['https://www.youtube.com/watch', 'https://www.netflix.com/watch/']});
+settings.map('i', VLCommand.FOCUS_INPUT, {excludes: ['https://chatgpt.com/']});
+settings.map('slash', VLCommand.SHOW_CONSOLE);
+settings.map('ctrl+i', VLCommand.INSERT_MODE);
+settings.map('g i', VLCommand.INSERT_MODE);
+settings.map('g 1', VLCommand.OPEN_TAB1);
+settings.map('g 2', VLCommand.OPEN_TAB2);
+settings.map('g 3', VLCommand.OPEN_TAB3);
+settings.map('g 4', VLCommand.OPEN_TAB4);
+settings.map('g 5', VLCommand.OPEN_TAB5);
+settings.map('g 6', VLCommand.OPEN_TAB6);
+settings.map('g 7', VLCommand.OPEN_TAB7);
+settings.map('g 8', VLCommand.OPEN_TAB8);
+settings.map('g 9', VLCommand.OPEN_TAB9);
+settings.map('g 0', VLCommand.OPEN_LAST_TAB);
+settings.map('x', VLCommand.CLOSE_TAB);
+settings.map('ctrl+u', VLCommand.VIDEO_FULLSCREEN);
+settings.map('ctrl+p', VLCommand.VIDEO_PIP);
+settings.map('ctrl+d', VLCommand.DARK_MODE);
+settings.map('r', VLCommand.RELOAD);
+settings.map('?', VLCommand.TOGGLE_HELP);
+settings.map('shift+slash', VLCommand.TOGGLE_HELP);
+settings.map('/', VLCommand.SHOW_CONSOLE);
+settings.map('c c', VLCommand.COPY_CURRENT_URL);
+settings.map('y y', VLCommand.COPY_CURRENT_URL);
+settings.map('y t', VLCommand.DUPLICATE_TAB);
+settings.map('g shift+u', VLCommand.GO_TO_URL_ROOT);
+settings.map('g u', VLCommand.GO_TO_URL_UP);
+settings.map('ctrl+m', VLCommand.ZOOM_IN);
+settings.map('shift+r', VLCommand.TOGGLE_READER_MODE);
+settings.map('o', VLCommand.OPEN_SELECTED_LINK_IN_NEW_TAB);
+settings.map('O', VLCommand.OPEN_SELECTED_LINK);
+
+
+// 通用搜索（优先使用选中文字）
+settings.map('g s', function(vimlike) {
+    var selected = window.getSelection().toString().trim();
+    if (selected) {
+        window.open("https://www.google.com/search?q=" + encodeURIComponent(selected), "_blank");
+    } else {
+        var query = prompt("Google search:");
+        if (query) {
+            window.open("https://www.google.com/search?q=" + encodeURIComponent(query), "_blank");
+        }
+    }
+});
+
+// 搜索「意味」版
+settings.map('g a', function(vimlike) {
+    var selected = window.getSelection().toString().trim();
+    if (selected) {
+        window.open("https://www.google.com/search?q=" + encodeURIComponent(selected + " 意味"), "_blank");
+    } else {
+        var query = prompt("Google search (意味):");
+        if (query) {
+            window.open("https://www.google.com/search?q=" + encodeURIComponent(query + " 意味"), "_blank");
+        }
+    }
+});
