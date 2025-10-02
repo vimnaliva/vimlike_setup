@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vimlike Search Bar Demo</title>
+<style>
+/* 简单页面样式 */
+body {
+    font-family: sans-serif;
+    margin: 2em;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin: 1em 0;
+}
+
+.highlight {
+    background-color: #fffa90; /* 用于模拟选中文本 */
+}
+</style>
+</head>
+<body>
+
+<h1>Vimlike カスタム検索バー Demo</h1>
+
+<p>以下はデモ用のテキストです。テキストを選択してからショートカットキー <strong>o</strong> を押すと検索バーが表示されます。</p>
+
+<p>例:</p>
+<ul>
+    <li>空投</li>
+    <li>徒步</li>
+    <li>https://www.example.com</li>
+</ul>
+
+<p>前後接頭辞:</p>
+<ul>
+    <li><strong>j</strong> → Google + 「意味」</li>
+    <li><strong>yt</strong> → YouTube検索</li>
+</ul>
+
+<!-- 引入你的 JS 文件 -->
+<script src="../js/searchbar.js"></script>
+<script src="../js/shortcut-search.js"></script>
+
+<script>
+// 简单模拟 Vimlike 的快捷键映射
+// 按 'o' 调出搜索框
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'o') {
+        createSearchBar();
+    }
+});
+</script>
+
+</body>
+</html>
