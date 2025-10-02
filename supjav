@@ -22,7 +22,7 @@ settings.map('4', function(vimlike) {
 // 通用搜索（优先使用选中文字）
 settings.map('g e', function(vimlike) {
     var selected = window.getSelection().toString().trim();
-    var selected = window.getSelection().toString().trim().slice(0, 7); // 取前7个字符，fc2ppvdb
+//    var selected = window.getSelection().toString().trim().slice(0, 7); // 取前7个字符，fc2ppvdb
     if (selected) {
         window.open("https://supjav.com/ja/?s=" + encodeURIComponent(selected), "_blank");
     } else {
