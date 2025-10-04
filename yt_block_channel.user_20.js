@@ -420,7 +420,7 @@
     // 创建管理按钮
     function createManagementButton() {
         const button = document.createElement('button');
-        button.textContent = '🛡️ 频道管理 v22';
+        button.textContent = '🛡️ 频道管理 v20';
         button.style.cssText = `
             position: fixed;
             bottom: 20px;
